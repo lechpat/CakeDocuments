@@ -1,0 +1,22 @@
+{
+	"name": "lechpat/cake-documents",
+    "description" : "A document manager plugin for CakePHP 3.",
+    "license" : "MIT",
+    "type" : "cakephp-plugin",
+    "authors": [
+        {
+            "name": "Mario Valdez",
+            "email": "lechpat@me.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Documents\\": "src"
+        }
+    },
+    "require" : {
+        "cakephp/cakephp": "~3.1"
+    },
+    "require-dev" : {
+    }
+}
