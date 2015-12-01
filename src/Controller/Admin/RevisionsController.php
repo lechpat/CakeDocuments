@@ -1,6 +1,6 @@
 <?php
 
-namespace Documents\Controller;
+namespace Documents\Controller\Admin;
 
 use Cake\ORM\TableRegistry;
 use Cake\Log\Log;
@@ -95,7 +95,7 @@ class RevisionsController extends AppController {
 	}
 
 	public function element_index($id = null, $limit = 0, $model = 0) {
-		$this->viewBuilder()->layout(false);
+        $this->viewBuilder()->layout(false);
 		$conditions = [
 			'Revisions.modelPrimaryKey' => $id
 		];
@@ -112,7 +112,7 @@ class RevisionsController extends AppController {
 	}
 
 	public function element_compare($idA, $idB) {
-		$this->viewBuilder()->layout(false);
+        $this->viewBuilder()->layout(false);
 		$revisionA = $this->Revisions->find()
 				->where(['Revisions.id' => $idA])
 				->first();

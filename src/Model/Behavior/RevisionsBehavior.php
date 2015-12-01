@@ -36,6 +36,10 @@ class RevisionsBehavior extends Behavior{
 
 		# if watch is set, use it 
 		switch (true):
+            # always save a revision
+            case $entity->isNew():
+                $trigger = true;
+                break;
 			# if `watch` is set AND one of the fields we're watching has been changed, trigger a save
 			case (!empty($config['watch'])):
 				$trigger = !empty($entity->extractOriginalChanged($config['watch']));
@@ -48,10 +52,9 @@ class RevisionsBehavior extends Behavior{
 
 			# if SOMETHING changed, and we're not explicity watching or ignoring anything, trigger anyway
 			default:
-				$trigger = $entity->dirty();
+				$trigger = $entity->dirty() || $entity->isNew();
 				break;
 		endswitch;
-
 		# if we don't need to trigger a save, stop
 		if(!$trigger):
 			return;

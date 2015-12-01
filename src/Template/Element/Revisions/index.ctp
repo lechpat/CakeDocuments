@@ -18,7 +18,7 @@ function getByAjax(url, success){
 	}
 	xmlhttp.send();
 }
-getByAjax("/revisions/revisions/element_index/<?=$id?>/<?=(empty($limit)?0:$limit)?>/<?=(empty($model)?0:$model)?>", function(data){
+getByAjax("/admin/documents/revisions/element_index/<?=$id?>/<?=(empty($limit)?0:$limit)?>/<?=(empty($model)?0:$model)?>", function(data){
 	var element = document.getElementById('RevisionsIndexListSpan');
 	element.innerHTML = data;
 });
@@ -29,7 +29,7 @@ function showElement(id){
 	document.getElementById(id).style.display = '';
 }
 function compareRevisions(a_id, b_id){
-	getByAjax("/revisions/revisions/element_compare/"+a_id+"/"+b_id, function(data){
+	getByAjax("/admin/documents/revisions/element_compare/"+a_id+"/"+b_id, function(data){
 		var element = document.getElementById('RevisionsIndexCompareDataSpan');
 		element.innerHTML = data;
 		hideElement('RevisionsIndexListSpan');
@@ -41,12 +41,12 @@ function closeComparison(){
 	hideElement('RevisionsIndexCompareSpan');
 }
 function restoreToBefore(id){
-	getByAjax("/revisions/revisions/element_restore/"+id+"/before", function(data){
+	getByAjax("/admin/documents/revisions/element_restore/"+id+"/before", function(data){
 		window.location.reload(true);
 	});
 }
 function restoreToAfter(id){
-	getByAjax("/revisions/revisions/element_restore/"+id+"/after", function(data){
+	getByAjax("/admin/documents/revisions/element_restore/"+id+"/after", function(data){
 		window.location.reload(true);
 	});
 }

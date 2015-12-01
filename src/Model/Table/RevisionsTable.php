@@ -32,7 +32,7 @@ class RevisionsTable extends Table
      */
     public function initialize(array $config)
     {
-        $this->table('revisions');
+        $this->table('documents_revisions');
         $this->displayField('id');
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
