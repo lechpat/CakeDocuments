@@ -31,6 +31,7 @@ class BundlesTable extends Table
             'className' => 'Documents.Templates',
             'foreignKey' => 'bundle_id',
             'through' => 'Documents.BundlesTemplates',
+            'sort' => ['BundlesTemplates.sort' => 'ASC']
         ]);
     }
 

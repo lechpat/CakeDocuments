@@ -15,7 +15,8 @@
         }
     },
     "require" : {
-        "cakephp/cakephp": "~3.1"
+        "cakephp/cakephp": "~3.1",
+        "josegonzalez/cakephp-version": "~1.5"
     },
     "require-dev" : {
     }
