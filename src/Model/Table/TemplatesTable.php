@@ -30,18 +30,18 @@ class TemplatesTable extends Table
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
-        $this->addBehavior('Documents.Revisions', [
-            'ignore' => [
-                'created',  # OTHER than these fields 
-                'modified', # was changed
-                'created_by',
-                'modified_by'
-            ],
+        $this->addBehavior('Josegonzalez/Version.Version',[
+            'versionTable' => 'documents_versions'
         ]);
-//        $this->belongsTo('Revisions', [
-//            'foreignKey' => 'revision_id',
-//            'className' => 'Documents.Revisions'
-//        ]);
+//        $this->addBehavior('Documents.Revisions', [
+//            'ignore' => [
+//                'created',  # OTHER than these fields 
+//                'modified', # was changed
+//                'created_by',
+//                'modified_by'
+//            ],
+//        ]);        
+
     }
 
     /**

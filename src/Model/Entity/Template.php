@@ -2,7 +2,7 @@
 namespace Documents\Model\Entity;
 
 use Cake\ORM\Entity;
-
+use \Josegonzalez\Version\Model\Behavior\Version\VersionTrait;
 /**
  * Template Entity.
  *
@@ -19,7 +19,7 @@ use Cake\ORM\Entity;
  */
 class Template extends Entity
 {
-
+    use VersionTrait;
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -35,7 +35,6 @@ class Template extends Entity
     ];
 
     private $vars;
-
 
     public function build($entity)
     {
